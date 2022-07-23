@@ -74,3 +74,44 @@ item : Los Angeles
 item : Software engineer
 */
 
+//Using `Array.forEach()` loop
+// ***************************
+
+//create an array
+const scores = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+
+//iterating scores using forEach method
+scores.forEach((score) => console.log(`score :${score}`));
+/*
+score :11
+score :22
+score :33
+score :44
+score :55
+score :66
+score :77
+score :88
+score :99
+*/
+
+//Using `Array.map()` method
+// ***************************
+let mapped = scores.map((score) => score / 11);
+console.log(mapped); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(Array.isArray(mapped)); //true;
+
+//Using `Array.filter()` Method
+// *****************************
+
+let lessThan50 = scores.filter((score) => score < 50);
+console.log(lessThan50); //[11, 22, 33, 44]
+console.log(Array.isArray(lessThan50)); //true;
+
+//Using `Array.reduce()` method
+// *****************************
+
+let total_score = scores.reduce((total, prev) => {
+  return (total += prev);
+}, 0);
+
+console.log(total_score); //495
