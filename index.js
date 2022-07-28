@@ -115,3 +115,42 @@ let total_score = scores.reduce((total, prev) => {
 }, 0);
 
 console.log(total_score); //495
+
+// `Using Array.every()` method
+// ******************************
+
+//The every() method checks if all elements in an array pass a test (provided as a function).
+//OR
+// It is used to check if each of the elements pass a test.
+// If one of the elements fails a test, the test is failed.
+
+const grades = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const under_five = (x) => x < 5;
+const above_zero = (y) => y > 0;
+
+const isEveryUnderFive = grades.every((x) => x < 5);
+console.log(isEveryUnderFive); //false
+
+//OR
+
+console.log(grades.every(under_five)); //false;
+
+// More than 5
+console.log(grades.every(above_zero)); //true
+
+// `Using Array.some()` method
+// *****************************
+
+// It is used to check whether some array values passes a test.
+// OR
+// It is used to check if any array value passes a test.
+// To pass a test, at least one element must pass a test.
+
+const isSomeUnderFive = grades.some((p) => p < 5);
+console.log(isSomeUnderFive); //true
+
+//OR
+console.log(grades.some(under_five)); //true
+
+console.log(grades.some((m) => m > 9)); //false
+console.log(grades.some((n) => n < 1)); //false
